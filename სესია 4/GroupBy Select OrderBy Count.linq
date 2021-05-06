@@ -11,9 +11,7 @@ void Main()
 	var filesGroupedByExtension = allFilesInPath
 		.GroupBy(file => Path.GetExtension(file))
 		.Where(ext => ext.Key.Length != 4)
-		.Select(group => new { group.Key, Count = group.Count()})
+		.Select(group => new { group.Key, Count = group.Count() })
 		.OrderByDescending(k => k.Count)
-		.Dump()
-		;
+		.Dump();
 }
-
